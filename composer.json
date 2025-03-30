@@ -9,7 +9,7 @@
         "google",
         "gae"
     ],
-    "homepage": "http://github.com/slimphp/Slim-Skeleton",
+    "homepage": "http://github.com/groton-school/slim-gae-skeleton",
     "license": "MIT",
     "authors": [
         {
