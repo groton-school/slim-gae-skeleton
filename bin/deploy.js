@@ -15,13 +15,13 @@ import path from 'node:path';
       }
     }
   });
-  const configure = force || !process.env.PROJECT;
+
+  if (force || !process.env.PROJECT) {
+    await gcloud.services.enable(gcloud.services.API.CloudLoggingAPI);
+  }
 
   const { project } = await gcloud.batch.appEngineDeployAndCleanup({
     retainVersions: 2
   });
 
-  if (configure) {
-    await gcloud.services.enable(gcloud.services.API.CloudLoggingAPI);
-  }
 })();
